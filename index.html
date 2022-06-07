@@ -9,6 +9,17 @@
   <link rel="stylesheet" href="css/defaut.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/index.css">
+  <!-- для подключения яндекс карты -->
+  <!-- <script defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU" type="text/javascript">
+  </script> -->
+  <!-- для подключения карты leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+  <script defer src="js/index.js"></script>
 </head>
 <body>
   <header class="header">
@@ -136,11 +147,11 @@
           </div>
           <div class="contacts__map-wrapper">
             <div class="contact__map" id="map">
-              <iframe 
+              <!-- <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.153963905935!2d37.62254951563863!3d55.773197780558775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a6c144a3111%3A0x6271b937f5bddbbe!2z0KLRgNGD0LHQvdCw0Y8g0YPQuy4sIDEwNCwg0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8sIDEyNzA1MQ!5e0!3m2!1sru!2sua!4v1654440876571!5m2!1sru!2sua"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
+              </iframe> -->
             </div>
           </div>
         </div> 
@@ -154,13 +165,13 @@
         <div class="footer__column">
           <ul class="footer__list">
             <li class="footer__item">
-              <a href="#gyroscooter" class="footer__link">Гироскутеры</a>
+              <a href="#gyroscooters" class="footer__link">Гироскутеры</a>
             </li>
             <li class="footer__item">
-              <a href="#monoweel" class="footer__link">Моноколеса</a>
+              <a href="#monoweels" class="footer__link">Моноколеса</a>
             </li>
             <li class="footer__item">
-              <a href="#electroscooter" class="footer__link">Электросамокаты</a>
+              <a href="#electroscooters" class="footer__link">Электросамокаты</a>
             </li>
           </ul>
         </div>
@@ -170,7 +181,7 @@
         </div>
         <div class="footer__column footer__contacts">
           <h3 class="footer__title">Контакты:</h3>
-          <div class="contacts__list">
+          <div class="contacts__list contacts__list_footer">
             <a class="contacts__link" href="tel:+73848833812">
               <span class="contacts__link-text">+7(384)883-38-12</span>
             </a>
