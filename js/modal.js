@@ -4,11 +4,11 @@ const productDescriptionElems=document.querySelectorAll('.product__description')
 
 const disabledScroll=()=>{
   document.body.style.cssText=`
-    overflow: hidden,
-    position: fixed,
+    overflow: hidden;
+    position: fixed;
   `;
 }
-const inabledScroll=()=>{
+const enabledScroll=()=>{
   document.body.style.cssText='';
 }
 
@@ -81,7 +81,7 @@ const createModal=(title, description)=>{
     const target=event.target;
     if ((target===overlayElem)|| (target.closest('.modal__close'))){
       overlayElem.remove();
-      inabledScroll();
+      enabledScroll();
     }
   })
   
