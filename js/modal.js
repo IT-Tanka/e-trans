@@ -2,15 +2,22 @@ const productBtnElems=document.querySelectorAll('.product__btn');
 const producTitleElems=document.querySelectorAll('.product__title');
 const productDescriptionElems=document.querySelectorAll('.product__description');
 
-const disabledScroll=()=>{
+const disabledScroll=( )=>{
+  document.body.scrollPosition=window.scrollY;
   document.body.style.cssText=`
     overflow: hidden;
     position: fixed;
+    top:-${document.body.scrollPosition}px;
+    left:0;
+    height:100vh;
+    width:100wv;
+    padding-right:${window.innerWidth-document.body.offsetWidth}px;
   `;
 }
 const enabledScroll=()=>{
   document.body.style.cssText='';
-}
+  window.scroll({top:document.body.scrollPosition});
+};
 
 const createElem=(tag, attr)=>{
   const elem=document.createElement(tag);
