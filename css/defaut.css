@@ -13,8 +13,6 @@
 }
 html {
   box-sizing: border-box;
-  /* position: relative;
-  overflow-x: hidden; */
 }
 *,
 *::after,
@@ -22,7 +20,7 @@ html {
   box-sizing: inherit;
 }
 body{
-  /* position: relative; */
+  position: relative;
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
@@ -31,7 +29,6 @@ body{
   line-height: 1.2;
   color:#18171A;
 }
-
 
 h1,h2,h3,p,ul{
 

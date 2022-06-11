@@ -14,6 +14,7 @@ const disabledScroll=( )=>{
     padding-right:${window.innerWidth-document.body.offsetWidth}px;
   `;
 }
+
 const enabledScroll=()=>{
   document.body.style.cssText='';
   window.scroll({top:document.body.scrollPosition});
@@ -90,7 +91,20 @@ const createModal=(title, description)=>{
       overlayElem.remove();
       enabledScroll();
     }
-  })
+    if(target===btnSubmit){
+      if((/^[a-zA-Z1-9]{2,20}$/.test(nameInpElem.value) === true)&&
+        (/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(phoneInpElem.value) === true)){
+        modalContainerElem.remove();
+        const name=nameInpElem.value;
+        h2=createElem('h2',{textContent:`Спасибо за Ваш заказ, ${name}!`});
+        h2.style.textAlign='center';
+        h2.style.marginBottom='10px';
+        p=createElem('p',{textContent:'Наш менеджер свяжется с вами в ближайшее время.'});
+        p.style.textAlign='center';
+        modalElem.append(h2, p);
+      } else{event.preventDefault();}
+    }
+  });
   
   nameLabelElem.append(nameSpanElem, nameInpElem);
   phoneLabelElem.append(phoneSpanElem,phoneInpElem);
@@ -100,12 +114,11 @@ const createModal=(title, description)=>{
   overlayElem.append(modalElem);
   disabledScroll();
   document.body.append(overlayElem);
-
 }
+
 for (let i=0; i<productBtnElems.length; i++){
   productBtnElems[i].addEventListener('click', ()=>{
     const title=producTitleElems[i].textContent;
-    
     const description=productDescriptionElems[i].textContent;
     createModal(title, description);
   })
