@@ -135,7 +135,6 @@
   }
   .modal__block{
     width: 520px;
-    height: 446px;
     padding: 20px 40px;
   }
   .modal__close{
@@ -229,7 +228,6 @@
   }
     .modal__block {
       width: 290px;
-      height: 483px;
       padding: 20px 15px;
     }
   
@@ -251,13 +249,11 @@
       font-size: 12px;
       margin-bottom: 5px;
     }
-  
     .modal__input {
       width: 260px;
       height: 50px;
       margin-bottom: 10px;
     }
-  
     .modal__btn {
       width: 260px;
       height: 50px;
